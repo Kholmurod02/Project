@@ -12,6 +12,7 @@ import ps5 from '../../assets/ps5.svg'
 import speaker from '../../assets/speaker.svg'
 import woman from '../../assets/woman.svg'
 import perfume from '../../assets/perfume.svg'
+import monitor from '../../assets/monitor.svg'
 
 
 import '../../App.css';
@@ -19,6 +20,7 @@ import '../../App.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import CategoryCard from '@/components/categorysCard/categoryCard';
 import { Button } from '@mui/material';
+import ProductCard from '@/components/productsCard/productCard';
 
 
 
@@ -41,7 +43,22 @@ const Home = () => {
             title: "HeadPhones"
         },
     ]
-    // Set the target date (3 days, 23 hours, 19 minutes, 56 seconds from now)
+    let prods=[
+        {
+            id:1,
+            image:monitor,
+            discount:25,
+            title:"IPS LCD Gaming Monitor",
+            price:900
+        },
+        {
+            id:2,
+            image:monitor,
+            discount:40,
+            title:"IPS LCD Gaming Monitor",
+            price:656
+        },
+    ]
     const targetDate = new Date().getTime() + (3 * 24 * 60 * 60 + 23 * 60 * 60 + 19 * 60 + 56) * 1000;
 
     // State to store remaining time
@@ -135,6 +152,9 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            <section>
+                <ProductCard data={prods}/>
+            </section>
 
             <section className='categories flex flex-col gap-5'>
                 <h1 className='font-[600] text-[30px]'>Browse By Category</h1>
@@ -168,6 +188,9 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+            </section>
+            <section>
+            <ProductCard />
             </section>
            
 
